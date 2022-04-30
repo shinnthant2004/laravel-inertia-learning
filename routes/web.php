@@ -25,3 +25,6 @@ Route::get('/users',function(){
     sleep(3);
     return Inertia::render('Users');
 });
+Route::post('/logout',function(){
+    dd('logged out');
+});
