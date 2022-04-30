@@ -20,3 +20,6 @@ Route::get('/', function () {
         'frameworks'=>['laravel','vue','inertia']
     ]);
 });
+Route::get('/users',function(){
+    return Inertia::render('Users');
+});
