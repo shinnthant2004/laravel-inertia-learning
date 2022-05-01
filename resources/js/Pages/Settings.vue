@@ -4,8 +4,11 @@
     </layout>
 </template>
 
-<script setup>
-import Layout from '../Shared/Layout.vue'
+<script>
+import LayoutVue from '../Shared/Layout.vue'
+export default {
+    layout:LayoutVue
+}
 </script>
 
 <style lang="scss" scoped>

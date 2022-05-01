@@ -4,9 +4,13 @@
         </Layout>
 </template>
 
-<script setup>
+<script>
+import LayoutVue from "../Shared/Layout.vue";
 import Nav from "../Shared/Nav";
-import Layout from "../Shared/Layout.vue";
+export default {
+  layout:LayoutVue,
+  components:{Nav}
+}
 </script>
 
 <style lang="scss" scoped>

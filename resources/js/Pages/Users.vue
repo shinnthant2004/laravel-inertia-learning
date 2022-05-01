@@ -10,12 +10,16 @@
 
 </template>
 
-<script setup>
+<script>
 
+import LayoutVue from '../Shared/Layout.vue'
 import Layout from '../Shared/Layout.vue'
-defineProps({
-    time:String
-})
+export default {
+    layout:LayoutVue,
+    props:{
+        time:String
+    }
+}
 </script>
 
 <style lang="scss" scoped>
