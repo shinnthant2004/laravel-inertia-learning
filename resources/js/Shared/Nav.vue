@@ -1,8 +1,9 @@
 <template>
     <div>
-      <nav class="mt-3 list-disc">
-           <li>
-               <Navlink href="/" :active="$page.component=='Welcome'">
+      <nav class="">
+           <ul class="flex space-x-4 list-inside">
+               <li>
+               <Navlink href="/" :active="$page.component=='Home'">
                   Home
                </Navlink>
             </li>
@@ -12,7 +13,14 @@
                </Navlink>
             </li>
 
+            <li>
+               <Navlink href="/settings" :active="$page.component=='Settings'">
+                 Setting
+               </Navlink>
+            </li>
+
            <li><Link href="/logout" class="text-blue-500 hover:underline" as="button" method="post">logout</Link></li>
+           </ul>
       </nav>
     </div>
 </template>

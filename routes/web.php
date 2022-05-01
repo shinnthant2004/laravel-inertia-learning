@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome',[
+    return Inertia::render('Home',[
         'name'=>"shinn thant",
         'frameworks'=>['laravel','vue','inertia']
     ]);
@@ -24,6 +24,9 @@ Route::get('/users',function(){
     return Inertia::render('Users',[
         'time'=>now()->toTimeString()
     ]);
+});
+Route::get('/settings',function(){
+    return Inertia::render('Settings');
 });
 Route::post('/logout',function(){
     dd('logged out');

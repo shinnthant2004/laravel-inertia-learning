@@ -1,20 +1,20 @@
 <template>
-    <div>
-        <Nav></Nav>
-         <h1>Users</h1>
 
-         <div style="margin-top:900px">
-             <p>Current Time is {{ time }}</p>
-             <Link class="text-blue-900" href="/users" preserve-scroll="">Refresh</Link>
-         </div>
-    </div>
+        <Layout>
+            <h1>Users</h1>
+               <div style="margin-top:900px">
+                  <p>Current Time is {{ time }}</p>
+                  <Link class="text-blue-900" href="/users" preserve-scroll="">Refresh</Link>
+              </div>
+        </Layout>
+
 </template>
 
 <script>
-import Nav from '../Shared/Nav'
 import { Link } from '@inertiajs/inertia-vue3'
+import Layout from '../Shared/Layout.vue'
     export default {
-      components:{Nav,Link},
+      components:{ Link, Layout },
       props:['time']
     }
 </script>
