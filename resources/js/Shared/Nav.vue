@@ -1,9 +1,9 @@
 <template>
     <div>
-      <nav>
-           <li><Link href="/">Home</Link></li>
-           <li><Link href="/users">Users</Link></li>
-           <li><Link href="/logout" as="button" method="post">logout</Link></li>
+      <nav class="mt-3 list-disc">
+           <li><Link href="/" class="text-blue-500 hover:underline">Home</Link></li>
+           <li><Link href="/users" class="text-blue-500 hover:underline">Users</Link></li>
+           <li><Link href="/logout" class="text-blue-500 hover:underline" as="button" method="post">logout</Link></li>
       </nav>
     </div>
 </template>

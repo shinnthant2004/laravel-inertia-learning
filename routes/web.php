@@ -15,15 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    sleep(2);
     return Inertia::render('Welcome',[
         'name'=>"shinn thant",
         'frameworks'=>['laravel','vue','inertia']
     ]);
 });
 Route::get('/users',function(){
-    sleep(3);
-    return Inertia::render('Users');
+    return Inertia::render('Users',[
+        'time'=>now()->toTimeString()
+    ]);
 });
 Route::post('/logout',function(){
     dd('logged out');

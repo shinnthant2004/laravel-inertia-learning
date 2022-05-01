@@ -2,13 +2,20 @@
     <div>
         <Nav></Nav>
          <h1>Users</h1>
+
+         <div style="margin-top:500px">
+             <p>Current Time is {{ time }}</p>
+             <Link class="text-blue-900" href="/users">Refresh</Link>
+         </div>
     </div>
 </template>
 
 <script>
 import Nav from '../Shared/Nav'
+import { Link } from '@inertiajs/inertia-vue3'
     export default {
-      components:{Nav}
+      components:{Nav,Link},
+      props:['time']
     }
 </script>
 
