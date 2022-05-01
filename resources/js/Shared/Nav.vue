@@ -1,8 +1,17 @@
 <template>
     <div>
       <nav class="mt-3 list-disc">
-           <li><Link href="/" class="text-blue-500 hover:underline">Home</Link></li>
-           <li><Link href="/users" class="text-blue-500 hover:underline">Users</Link></li>
+           <li>
+               <Navlink href="/" :active="$page.component=='Welcome'">
+                  Home
+               </Navlink>
+            </li>
+           <li>
+               <Navlink href="/users" :active="$page.component=='Users'">
+                 Users
+               </Navlink>
+            </li>
+
            <li><Link href="/logout" class="text-blue-500 hover:underline" as="button" method="post">logout</Link></li>
       </nav>
     </div>
@@ -10,8 +19,9 @@
 
 <script>
 import {Link} from '@inertiajs/inertia-vue3'
+import Navlink from './Navlink.vue'
     export default {
-      components:{Link}
+      components:{ Link, Navlink }
     }
 </script>
 
