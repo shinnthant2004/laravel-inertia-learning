@@ -5,10 +5,7 @@
 </template>
 
 <script>
-import LayoutVue from '../Shared/Layout.vue'
-export default {
-    layout:LayoutVue
-}
+
 </script>
 
 <style lang="scss" scoped>

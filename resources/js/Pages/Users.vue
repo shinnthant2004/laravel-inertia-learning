@@ -12,10 +12,7 @@
 
 <script>
 
-import LayoutVue from '../Shared/Layout.vue'
-import Layout from '../Shared/Layout.vue'
 export default {
-    layout:LayoutVue,
     props:{
         time:String
     }

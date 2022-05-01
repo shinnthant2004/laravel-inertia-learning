@@ -5,10 +5,8 @@
 </template>
 
 <script>
-import LayoutVue from "../Shared/Layout.vue";
 import Nav from "../Shared/Nav";
 export default {
-  layout:LayoutVue,
   components:{Nav}
 }
 </script>
