@@ -14,6 +14,7 @@ createInertiaApp({
       .component("Link",Link)
       .mount(el)
   },
+  title:title => `${title} - My App`
 })
 InertiaProgress.init({
     color:'red',

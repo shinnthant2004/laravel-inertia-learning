@@ -1,14 +1,11 @@
 <template>
-        <Layout>
-            <h1 class="text-blue-600 text-4xl">min ga lar par</h1>
-        </Layout>
+<Head title="Home"></Head>
+<h1 class="text-blue-600 text-4xl">min ga lar par</h1>
 </template>
 
-<script>
+<script setup>
 import Nav from "../Shared/Nav";
-export default {
-  components:{Nav}
-}
+import { Head } from "@inertiajs/inertia-vue3";
 </script>
 
 <style lang="scss" scoped>
