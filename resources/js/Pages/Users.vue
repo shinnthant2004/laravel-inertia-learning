@@ -10,13 +10,12 @@
 
 </template>
 
-<script>
-import { Link } from '@inertiajs/inertia-vue3'
+<script setup>
+
 import Layout from '../Shared/Layout.vue'
-    export default {
-      components:{ Link, Layout },
-      props:['time']
-    }
+defineProps({
+    time:String
+})
 </script>
 
 <style lang="scss" scoped>

@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core'
 
 import Nav from './Nav.vue'
     export default {

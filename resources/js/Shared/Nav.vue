@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import {Link} from '@inertiajs/inertia-vue3'
+
 import Navlink from './Navlink.vue'
     export default {
-      components:{ Link, Navlink }
+      components:{  Navlink }
     }
 </script>
 
