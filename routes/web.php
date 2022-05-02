@@ -4,7 +4,8 @@ use App\Models\User;
 use Inertia\Inertia;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Validation\Rule;
+use Whoops\Run;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 Route::get('/users',function(){
-    return Inertia::render('Users',[
+    return Inertia::render('Users/Index',[
         'users'=>User::query()
              ->when(Request('search'),function($query,$search){
                 $query->where('name','like',"%{$search}%");
@@ -33,6 +34,18 @@ Route::get('/users',function(){
             'name'=>$user->name
              ]),
     ]);
+});
+Route::post('/users',function(){
+    $formData=request()->validate([
+        'name'=>['required',Rule::unique('users','name')],
+        'email'=>['required',Rule::unique('users','email')],
+        'password'=>['required'],
+    ]);
+    User::create($formData);
+    return redirect('/users');
+});
+Route::get('/users/create',function(){
+    return Inertia::render('Users/Create');
 });
 Route::get('/settings',function(){
     return Inertia::render('Settings');
