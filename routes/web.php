@@ -37,7 +37,7 @@ Route::get('/users',function(){
 });
 Route::post('/users',function(){
     $formData=request()->validate([
-        'name'=>['required',Rule::unique('users','name')],
+        'name'=>['required',"min:3",Rule::unique('users','name')],
         'email'=>['required',Rule::unique('users','email')],
         'password'=>['required'],
     ]);

@@ -12,7 +12,8 @@
            type="name"
            name="name"
            id="name"
-           required>
+           >
+          <div v-if="errors.name" v-text="errors.name" class="text-red-600"></div>
         </div>
 
         <div class="my-6">
@@ -25,7 +26,8 @@
            type="email"
            name="email"
            id="email"
-           required>
+           >
+         <div v-if="errors.email" v-text="errors.email" class="text-red-600"></div>
         </div>
 
         <div class="mb-6">
@@ -38,7 +40,8 @@
            type="password"
            name="password"
            id="password"
-           required>
+           >
+            <div v-if="errors.password" v-text="errors.password" class="text-red-600"></div>
         </div>
         <div class="my-6">
             <button type="submit" class="bg-blue-500 text-white p-2 rounded">Submit</button>
@@ -47,6 +50,9 @@
 </template>
 
 <script setup>
+defineProps({
+    errors:Object
+})
 import { Inertia } from "@inertiajs/inertia";
 import { reactive } from "@vue/reactivity";
 
