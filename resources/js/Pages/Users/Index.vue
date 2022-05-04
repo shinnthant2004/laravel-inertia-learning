@@ -34,16 +34,17 @@ import { Head } from "@inertiajs/inertia-vue3";
 import { ref } from '@vue/reactivity';
 import { watch } from '@vue/runtime-core';
 import { Inertia } from '@inertiajs/inertia';
+import throttle from "lodash/throttle"
 defineProps({
    users:Object
 })
 let search=ref('');
-watch(search,value=>{
+watch(search,throttle(function (value) {
     Inertia.get('/users',{search:value},{
         preserveState:true,
         replace:true
     })
-})
+},500))
 </script>
 
 <style lang="scss" scoped>
