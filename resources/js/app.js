@@ -5,7 +5,9 @@ import LayoutVue from './Shared/Layout.vue';
 createInertiaApp({
   resolve: async name => {
    let page = (await import(`./Pages/${name}`)).default;
-   page.layout ??= LayoutVue
+   if(page.layout === undefined){
+    page.layout ??= LayoutVue
+   }
    return page;
   },
   setup({ el, App, props, plugin }) {

@@ -19,7 +19,16 @@
                </Navlink>
             </li>
 
-           <li><Link href="/logout" class="text-blue-500 hover:underline" as="button" method="post">logout</Link></li>
+            <li>
+               <Navlink href="/login">
+                 Login
+               </Navlink>
+            </li>
+            <li>
+               <Navlink href="/logout" method="post">
+                 Logout
+               </Navlink>
+            </li>
            </ul>
       </nav>
     </div>

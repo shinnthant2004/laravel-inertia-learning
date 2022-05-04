@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Models\User;
 use Inertia\Inertia;
 use Illuminate\Http\Client\Request;
@@ -17,9 +18,14 @@ use Whoops\Run;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login',[LoginController::class,'create'])->name('login');
+Route::post('/login',[LoginController::class,'store']);
+Route::post('/logout',[LoginController::class,'destroy'])->middleware('auth');
 
-Route::get('/', function () {
-    return Inertia::render('Home');
+Route::middleware('auth')->group(function(){
+    Route::get('/', function () {
+        return Inertia::render('Home');
+    });
 });
 Route::get('/users',function(){
     return Inertia::render('Users/Index',[
@@ -49,7 +55,4 @@ Route::get('/users/create',function(){
 });
 Route::get('/settings',function(){
     return Inertia::render('Settings');
-});
-Route::post('/logout',function(){
-    dd('logged out');
 });
