@@ -2,7 +2,10 @@
 
  <Head title="Users"></Head>
    <div class="flex justify-between">
-       <h1 class="text-3xl text-blue-500">Users</h1>
+      <div class="flex align-center">
+           <h1 class="text-3xl text-blue-500">Users</h1>
+           <Link href="/users/create" class="text-blue-500 ml-2">New</Link>
+      </div>
        <input type="text" placeholder="Search..." class="border px-3" v-model="search">
    </div>
 

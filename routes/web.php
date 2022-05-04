@@ -30,8 +30,8 @@ Route::get('/users',function(){
              ->paginate(10)
              ->withQueryString()
              ->through(fn($user)=>[
-            'id'=>$user->id,
-            'name'=>$user->name
+             'id'=>$user->id,
+             'name'=>$user->name
              ]),
     ]);
 });

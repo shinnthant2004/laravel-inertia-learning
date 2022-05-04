@@ -13,7 +13,7 @@
            name="name"
            id="name"
            >
-          <div v-if="errors.name" v-text="errors.name" class="text-red-600"></div>
+          <div v-if="form.errors.name" v-text="form.errors.name" class="text-red-600"></div>
         </div>
 
         <div class="my-6">
@@ -27,7 +27,7 @@
            name="email"
            id="email"
            >
-         <div v-if="errors.email" v-text="errors.email" class="text-red-600"></div>
+         <div v-if="form.errors.email" v-text="form.errors.email" class="text-red-600"></div>
         </div>
 
         <div class="mb-6">
@@ -41,28 +41,23 @@
            name="password"
            id="password"
            >
-            <div v-if="errors.password" v-text="errors.password" class="text-red-600"></div>
+            <div v-if="form.errors.password" v-text="form.errors.password" class="text-red-600"></div>
         </div>
         <div class="my-6">
-            <button type="submit" class="bg-blue-500 text-white p-2 rounded">Submit</button>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded" :disabled="form.processing">Submit</button>
         </div>
     </form>
 </template>
 
 <script setup>
-defineProps({
-    errors:Object
-})
-import { Inertia } from "@inertiajs/inertia";
-import { reactive } from "@vue/reactivity";
-
-let form=reactive ({
+import {useForm} from "@inertiajs/inertia-vue3"
+let form=useForm({
     name:'',
     email:'',
     password:''
 });
 let submit=()=>{
-    Inertia.post('/users',form)
+    form.post('/users')
 }
 </script>
 
